@@ -5,9 +5,9 @@ Simple iOS push notification with auth key
 	require_once('inc_jwt_helper.php');
 
 	$authKey = "APNsAuthKey_QWERTYUI.p8";
-  $arParam['teamId'] = 'TEAMID_1';// Get it from Apple Developer's page
-  $arParam['authKeyId'] = 'authKeyId';
-  $arParam['apns-topic'] = 'App_Bundle_Id';
+  	$arParam['teamId'] = 'TEAMID_1';// Get it from Apple Developer's page
+ 	$arParam['authKeyId'] = 'authKeyId';
+  	$arParam['apns-topic'] = 'App_Bundle_Id';
 	$arClaim = ['iss'=>$arParam['teamId'], 'iat'=>time()];
 	$arParam['p_key'] = file_get_contents($authKey);
 	$arParam['header_jwt'] = JWT::encode($arClaim, $arParam['p_key'], $arParam['authKeyId'], 'RS256');
